@@ -30,7 +30,12 @@ namespace GameCouponsServer
                 }
             }
 
-            return JsonConvert.SerializeObject(cityList);
+            var cityListObject = new
+            {
+                Data = cityList,
+            };
+
+            return JsonConvert.SerializeObject(cityListObject);
         }
     }
 }
