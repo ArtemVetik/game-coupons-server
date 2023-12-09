@@ -11,7 +11,7 @@ namespace GameCouponsServer
                 case "LOGIN":
                     return await LoginRequest.CreateRequest();
                 case "CITY_LIST":
-                    return await CityListRequest.CreateRequest();
+                    return await CityListRequest.CreateRequest(request);
                 default:
                     throw new InvalidOperationException($"Method {request.method} not found.");
             }
