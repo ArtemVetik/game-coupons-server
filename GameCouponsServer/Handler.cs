@@ -2,19 +2,11 @@
 
 namespace GameCouponsServer
 {
-    public class Handler : YcFunction<Request, Task<string>>
+    public class Handler : YcFunction<object, Task<string>>
     {
-        public async Task<string> FunctionHandler(Request request, Context context)
+        public async Task<string> FunctionHandler(object request, Context context)
         {
-            switch (request.method)
-            {
-                case "LOGIN":
-                    return await LoginRequest.CreateRequest();
-                case "CITY_LIST":
-                    return await CityListRequest.CreateRequest(request);
-                default:
-                    throw new InvalidOperationException($"Method {request.method} not found.");
-            }
+            return await LoginRequest.CreateRequest();
         }
     }
 }

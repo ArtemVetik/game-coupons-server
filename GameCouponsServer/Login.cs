@@ -1,4 +1,5 @@
-﻿namespace GameCouponsServer
+﻿
+namespace GameCouponsServer
 {
     public class Login
     {
